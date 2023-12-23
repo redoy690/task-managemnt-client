@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Container from "../../Shared/Container/Container";
 import { AuthContext } from "../../providers/AuthProviers";
 import toast from "react-hot-toast";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 
 
@@ -31,8 +31,8 @@ const Login = () => {
             <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <h1 className="text-5xl font-bold"></h1>
+                        <img src="https://i.ibb.co/bPDzq94/depositphotos-135721568-stock-photo-woman-writing-in-notebook.webp" alt="" />
                     </div>
                     <div className=" shrink-0 w-full max-w-sm border-r-2">
                         <h2 className="text-center text-3xl text-[#00AAFF] font-bold">Login</h2>
@@ -57,6 +57,7 @@ const Login = () => {
                             </div>
                         </form>
                         <SocialLogin></SocialLogin>
+                        <p className="mt-4 text-center font-bold text-lg">You do not have an account <Link to="/signup" className="text-red-400">Sign Up</Link> Now</p>
                     </div>
                     
                 </div>

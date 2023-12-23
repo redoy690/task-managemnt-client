@@ -6,7 +6,7 @@ const Footer = () => {
         <Container>
             <footer className="footer my-10 p-10 bg-base-200 text-base-content">
                 <aside>
-                <img src="../../../public/logo.png" className="w-[100px]" alt="" />
+                <img src="https://i.ibb.co/grsck8v/logo.png" className="w-[100px]" alt="" />
                     <p>Meister Task Ltd.<br />Providing reliable tech since 1992</p>
                 </aside>
                 <nav>

@@ -22,7 +22,7 @@ const Dropdown = () => {
                                             user ?
                                             <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
                                             :
-                                            <img alt="Tailwind CSS Navbar component" src="./placeholder.jpg" />
+                                            <img alt="Tailwind CSS Navbar component" src="https://i.ibb.co/QMQ45xq/placeholder.jpg" />
                                         }
                                     </div>
                                 </div>
@@ -38,8 +38,8 @@ const Dropdown = () => {
                                     </>
                                     :
                                     <>
-                                        <li><Link to="/login">Login</Link></li>
-                                        <li><Link to="/signup">Sign Up</Link></li>
+                                        <li className="mt-2"><Link to="/login">Login</Link></li>
+                                        <li className="my-2"><Link to="/signup">Sign Up</Link></li>
                                     </>
 
 

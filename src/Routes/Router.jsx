@@ -11,6 +11,7 @@ import Edittask from "../pages/Dashboard/Edittask";
 import Edittaskcardpage from "../pages/Dashboard/Edittaskcardpage";
 import Aboutus from "../pages/Aboutus/Aboutus";
 import Gallery from "../pages/Gallery/Gallery";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 
@@ -41,27 +42,27 @@ export const router = createBrowserRouter([
       },
       {
         path: 'dashboard/',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
           {
             path: '/dashboard/userprofile',
-            element: <UserProfile></UserProfile>
+            element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
           },
           {
             path: '/dashboard/createnewtask',
-            element: <CreateNewTask></CreateNewTask>
+            element: <PrivateRoute><CreateNewTask></CreateNewTask></PrivateRoute>
           },
           {
             path: '/dashboard/alltask',
-            element: <AllTask></AllTask>
+            element: <PrivateRoute><AllTask></AllTask></PrivateRoute>
           },
           {
             path:'/dashboard/edittask',
-            element:<Edittask></Edittask>
+            element:<PrivateRoute><Edittask></Edittask></PrivateRoute>
           },
           {
             path:'/dashboard/edittask/edittask/:id',
-            element:<Edittaskcardpage></Edittaskcardpage>
+            element:<PrivateRoute><Edittaskcardpage></Edittaskcardpage></PrivateRoute>
           },
          
         ]

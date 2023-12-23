@@ -4,8 +4,11 @@ import Container from "../../Shared/Container/Container";
 import { AuthContext } from "../../providers/AuthProviers";
 import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
+    const navigate = useNavigate()
+    const location = useLocation()
     const { createUser } = useContext(AuthContext)
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -33,6 +36,7 @@ const Register = () => {
                     displayName: name,
                     photoURL: url
                 })
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 console.log(error)
@@ -46,8 +50,8 @@ const Register = () => {
                 <div className="hero min-h-screen ">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
-                            <h1 className="text-5xl font-bold">Register now!</h1>
-                            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                            <h1 className="text-5xl font-bold"></h1>
+                            <img src="https://i.ibb.co/bPDzq94/depositphotos-135721568-stock-photo-woman-writing-in-notebook.webp" alt="" />
                         </div>
                         <div className=" shrink-0 w-full max-w-sm border-r-2">
                             <h2 className="text-center text-3xl text-[#00AAFF] font-bold">Register</h2>
@@ -83,7 +87,9 @@ const Register = () => {
                                     <input type="submit" value="Register" className="btn" />
                                 </div>
                             </form>
+                            <p className="mt-4 text-center font-bold text-lg">You have an account <Link to="/login" className="text-red-400">Login</Link> Now</p>
                         </div>
+
                     </div>
                 </div>
             </Container>
